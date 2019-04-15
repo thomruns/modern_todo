@@ -9,9 +9,36 @@
   <link rel="stylesheet" href="styles.css">
   <title>Modern ToDo List</title>
 </head>
-<body>
-  <h1>ToDo List</h1>
-  <i class="fas fa-trash-alt"></i>
+<div class="container">
+    <header class="text-center text-light my-4">
+      <h1 class="mb-4">ToDo List</h1>
+      <!-- search form -->
+      <form class="search">
+        <input class="form-control m-auto" type="text" name="search" placeholder="search todos" />
+      </form>
+    </header>
+    <!-- dummy todos -->
+    <ul class="list-group todos mx-auto text-light">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>work on Javascript project</span>
+        <i class="far fa-trash-alt delete"></i>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>study regular expressions</span>
+        <i class="far fa-trash-alt delete"></i>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>make a veggie pie</span>
+        <i class="far fa-trash-alt delete"></i>
+      </li>
+    </ul>
+    <!-- form to add a new todo -->
+    <form class="add text-center my-4">
+      <label class="text-light">Add a new ToDo...</label>
+      <input class="form-control m-auto" type="text" name="add" />
+    </form>
+
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
