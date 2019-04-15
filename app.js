@@ -1,5 +1,5 @@
-const addForm = document.querySelector('.add');
-const todoList = document.querySelector('.todos');
+const addForm = document.querySelector('.add');  // get the add form
+const todoList = document.querySelector('.todos'); // get the ui todo list
 
 // add the new todo to the ui
 const generateTemplate = todo => {
@@ -9,7 +9,7 @@ const generateTemplate = todo => {
       <i class="far fa-trash-alt delete"></i>
     </li>
     `;
-    todoList.innerHTML += html; // add to the list content
+    todoList.innerHTML += html; // add to the existing ui list content
 }
 
 
@@ -20,7 +20,7 @@ addForm.addEventListener('submit', (e) => {
   // prevent entries of zero length
   if(todo.length) {
     generateTemplate(todo); // add a new todo to the ui
-    addForm.reset(); // clear the input field using a form method
+    addForm.reset(); // clear the input field using a method of the form object
   }
 
 });
