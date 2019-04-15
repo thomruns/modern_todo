@@ -1,5 +1,6 @@
 const addForm = document.querySelector('.add');  // get the add form
 const todoList = document.querySelector('.todos'); // get the ui todo list
+const searchList = document.querySelector('.search input'); // get the search form input field
 
 // add the new todo to the ui
 const generateTemplate = todo => {
@@ -30,4 +31,22 @@ todoList.addEventListener('click', e => {
   if(e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
   }
+});
+
+const filterTodos = input => {
+
+  Array.from(todoList.children)
+    .filter(todo => !todo.textContent.toLowerCase().includes(input))
+    .forEach(todo => todo.classList.add('filtered'));
+
+  Array.from(todoList.children)
+    .filter(todo => todo.textContent.toLowerCase().includes(input))
+    .forEach(todo => todo.classList.remove('filtered'));
+
+};
+
+// attach keyup event for search input field
+searchList.addEventListener('keyup', () => {
+  const term = searchList.value.trim().toLowerCase();
+  filterTodos(term);
 });
